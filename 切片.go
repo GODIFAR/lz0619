@@ -2,7 +2,15 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
+
+func hyperspace(worlds []string) {
+	for i := range worlds {
+		// strings.TrimSpace 方法  去字符串空格
+		worlds[i] = strings.TrimSpace(worlds[i])
+	}
+}
 
 func main() {
 	//切片
@@ -27,4 +35,9 @@ func main() {
 	dwarfarry := []string{"a", "s", "d", "f"}
 	fmt.Printf("%T,%T", dwarf, dwarfarry)
 	fmt.Println(dwarf, dwarfarry)
+	//去空格连接字符串
+	planets := []string{"  abc ", " def ", "g"}
+	hyperspace(planets)
+	// strings.Join 连接字符串
+	fmt.Println(strings.Join(planets, ""))
 }
